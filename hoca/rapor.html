@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapor Ekranı</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background:#f5f5f5; }
+    h1 { color:#1976d2; font-size:20px; }
+    select { padding:10px; font-size:15px; border-radius:8px; border:1px solid #ccc; }
+    .tableWrap { overflow-x:auto; background:#fff; border-radius:12px; padding:12px; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    table { border-collapse:collapse; width:100%; font-size:13px; }
+    th, td { border:1px solid #ddd; padding:6px 8px; text-align:center; white-space:nowrap; }
+    th { background:#1976d2; color:#fff; }
+    tr:nth-child(even) { background:#fafafa; }
+    .ok { color:#2e7d32; font-weight:bold; }
+    .no { color:#c62828; }
+    .total { font-weight:bold; background:#e3f2fd; }
+    a { color:#1976d2; }
+  </style>
+</head>
+<body>
+  <h1>📊 Rapor Ekranı</h1>
+  <p><label>Ders: <select id="courseSel"></select></label></p>
+  <div class="tableWrap"><table id="report"></table></div>
+  <p style="text-align:center;margin-top:16px"><a href="index.html">⬅️ Hoca Ana Ekrana Dön</a></p>
+  <script src="rapor.js"></script>
+</body>
+</html>

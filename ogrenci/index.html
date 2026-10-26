@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+  <title>Öğrenci - Sesli QR Yoklama</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background:#f5f5f5; text-align:center; }
+    h1 { color:#1976d2; font-size:20px; }
+    .card { background:#fff; border-radius:12px; padding:16px; margin-bottom:12px; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    input, button { padding:10px; font-size:15px; border-radius:8px; border:1px solid #ccc; }
+    button { background:#1976d2; color:#fff; border:none; cursor:pointer; }
+    #qr { display:inline-block; margin:12px auto; }
+    #status { font-weight:bold; color:#666; }
+    #manualCode { width:120px; text-align:center; font-size:20px; letter-spacing:6px; }
+  </style>
+</head>
+<body>
+  <h1>🎒 Öğrenci - Sesli QR Yoklama</h1>
+
+  <div class="card">
+    <p>Öğrenci No:</p>
+    <input id="studentNo" placeholder="2024001" value="2024001">
+  </div>
+
+  <div class="card">
+    <p id="status">🎤 Mikrofon dinleniyor...</p>
+    <div id="qr"></div>
+  </div>
+
+  <div class="card">
+    <p><b>Manuel Kod Girişi (Fallback)</b></p>
+    <input id="manualCode" maxlength="4" placeholder="----">
+    <button id="manualBtn">QR Üret</button>
+  </div>
+
+  <script src="ogrenci.js"></script>
+</body>
+</html>

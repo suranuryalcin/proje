@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+  <title>Hoca - Sesli QR Yoklama</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #f5f5f5; }
+    h1 { font-size: 20px; color: #1976d2; }
+    .card { background:#fff; border-radius:12px; padding:16px; margin-bottom:12px; box-shadow:0 2px 6px rgba(0,0,0,.08); }
+    .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    select, input, button { padding:10px; font-size:15px; border-radius:8px; border:1px solid #ccc; }
+    button { background:#1976d2; color:#fff; border:none; cursor:pointer; }
+    button:disabled { background:#aaa; cursor:not-allowed; }
+    button.danger { background:#d32f2f; }
+    #code { font-size:48px; font-weight:bold; letter-spacing:12px; text-align:center; color:#d32f2f; }
+    #video { width:100%; max-width:340px; border-radius:12px; background:#000; display:none; }
+    #alert { padding:12px; border-radius:8px; font-weight:bold; display:none; margin-bottom:12px; }
+    #alert.ok  { background:#e8f5e9; color:#2e7d32; display:block; }
+    #alert.err { background:#ffebee; color:#c62828; display:block; }
+    #studentCard { display:none; }
+    #studentCard img { width:110px; height:110px; object-fit:cover; border-radius:50%; border:3px solid #1976d2; }
+    #studentCard .info p { margin:4px 0; }
+    a { color:#1976d2; }
+  </style>
+</head>
+<body>
+  <h1>👨‍🏫 Hoca - Sesli QR Yoklama</h1>
+
+  <div class="card">
+    <div class="row">
+      <label>Ders: <select id="courseSel"></select></label>
+      <label>Hafta: <select id="weekSel"></select></label>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button id="startBtn">▶️ Yayını Başlat</button>
+      <button id="stopBtn" class="danger" disabled>⏹️ Durdur</button>
+    </div>
+    <div style="margin-top:10px">
+      <label><input type="checkbox" id="autoCam" checked> Otomatik Kamera</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <p style="text-align:center;margin:0;color:#666">Şu An Yayında Olan Kod</p>
+    <div id="code">----</div>
+  </div>
+
+  <div class="card">
+    <div class="row"><button id="camBtn">📷 Kamerayı Aç</button></div>
+    <div style="margin-top:10px"><video id="video" autoplay playsinline muted></video></div>
+  </div>
+
+  <div id="alert"></div>
+
+  <div class="card" id="studentCard">
+    <div class="row">
+      <img id="stuPhoto" alt="Öğrenci">
+      <div class="info">
+        <p><b id="stuName"></b></p>
+        <p id="stuNo"></p>
+        <p id="stuBolum"></p>
+        <p id="stuProgram"></p>
+        <p id="stuSinif"></p>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center"><a href="rapor.html">📊 Rapor Ekranına Git</a></p>
+
+  <script src="hoca.js"></script>
+</body>
+</html>
